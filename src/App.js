@@ -5,12 +5,19 @@ import SambalImage from './images/sambal.png';
 import MasakanImage from './images/masakan.png';
 import { useState } from 'react';
 
+function getRandomFood() {
+    const foods = ['spice', 'fruit', 'veggie', 'sushi', 'cake', 'pasta', 'noodle'];
+
+    return foods[Math.floor(Math.random() * foods.length)];
+}
+
 function App() {
     /*const handleClick = () => {
         setCount(count + 1);
     };*/
 
-    const [count, setCount] = useState(0);
+    const [foods, setFoods] = useState([]);
+    
     return (
         <div>
             <section className="hero is-primary">
@@ -48,9 +55,9 @@ function App() {
             </div>
             
             <div>                
-                <button onClick={() => setCount(count + 1)}>
+                <button onClick={() => setFoods([...foods, getRandomFood()])}>
                     Add Food</button>
-                <div>Number of Foods: {count}</div>
+                <div>{foods}</div>
             </div>
             
         </div>
