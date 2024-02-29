@@ -3,8 +3,14 @@ import ProfileCard from "./ProfileCard";
 import PesImage from './images/pes.png';
 import SambalImage from './images/sambal.png';
 import MasakanImage from './images/masakan.png';
+import { useState } from 'react';
 
 function App() {
+    /*const handleClick = () => {
+        setCount(count + 1);
+    };*/
+
+    const [count, setCount] = useState(0);
     return (
         <div>
             <section className="hero is-primary">
@@ -41,7 +47,11 @@ function App() {
                 </section>
             </div>
             
-            
+            <div>                
+                <button onClick={() => setCount(count + 1)}>
+                    Add Food</button>
+                <div>Number of Foods: {count}</div>
+            </div>
             
         </div>
     );
