@@ -4,6 +4,7 @@ import PesImage from './images/pes.png';
 import SambalImage from './images/sambal.png';
 import MasakanImage from './images/masakan.png';
 import { useState } from 'react';
+import FoodShow from './FoodShow';
 
 function getRandomFood() {
     const foods = ['spice', 'fruit', 'veggie', 'sushi', 'cake', 'pasta', 'noodle'];
@@ -18,6 +19,10 @@ function App() {
 
     const [foods, setFoods] = useState([]);
     
+    const renderedFoods = foods.map((food, index) => {
+        return <FoodShow type={food} key={index} />;
+    });
+
     return (
         <div>
             <section className="hero is-primary">
@@ -57,7 +62,7 @@ function App() {
             <div>                
                 <button onClick={() => setFoods([...foods, getRandomFood()])}>
                     Add Food</button>
-                <div>{foods}</div>
+                <div>{renderedFoods}</div>
             </div>
             
         </div>
