@@ -1,3 +1,4 @@
+import './FoodShow.css';
 import { useState } from 'react';
 import veggie from './imgfood/veggie.jpg';
 import cake from './imgfood/cake.jpg';
@@ -27,9 +28,10 @@ function FoodShow({ type }) {
     };
 
     return (
-        <div onClick={handleClick}>
+        <div className="food-show" onClick={handleClick}>
             <img alt="food" src={imgfoodMap[type]} />
             <img 
+                className='heart'
                 alt="heart" 
                 src={heart}
                 style={{ width: 10 + 10 * clicks + 'px'}} 
