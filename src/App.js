@@ -3,6 +3,7 @@ import ProfileCard from "./ProfileCard";
 import PesImage from './images/pes.png';
 import SambalImage from './images/sambal.png';
 import MasakanImage from './images/masakan.png';
+import './App.css';
 import { useState } from 'react';
 import FoodShow from './FoodShow';
 
@@ -59,10 +60,10 @@ function App() {
                 </section>
             </div>
             
-            <div>                
+            <div className='app'>                
                 <button onClick={() => setFoods([...foods, getRandomFood()])}>
                     Add Food</button>
-                <div>{renderedFoods}</div>
+                <div className='food-list'>{renderedFoods}</div>
             </div>
             
         </div>
